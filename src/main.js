@@ -23,7 +23,7 @@ Vue.prototype.$http = axios.create()
 Vue.prototype.$http.interceptors.response.use((response) => {
   if (response.headers['access-token']) {
     // Commits the relevant headers to the store, calling mutation `auth`.
-    const authHeaders = pick(r.headers, ["access-token","client","expiry","uid","token-type"])
+    const authHeaders = pick(response.headers, ["access-token","client","expiry","uid","token-type"])
     store.commit('auth', authHeaders)
 
     var session = vueCookie.get('session')
