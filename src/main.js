@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import vuetify from './plugins/vuetify'
 /*-import router from './router'
 import store from './store'
 import axios from 'axios'
@@ -60,5 +61,6 @@ Vue.prototype.$http.interceptors.request.use((config) => {
 })*/
 
 new Vue({
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')

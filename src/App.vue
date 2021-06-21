@@ -1,53 +1,60 @@
 <template>
   <v-app>
-    <v-app-bar app dark hide-on-scroll elevation="0" color="#0A182F">
-      <v-icon size="32"> mdi-boxing-glove </v-icon>
-      <v-spacer />
-      <v-btn href="#about" text class="pl-3 pr-3 text-none">
-        <v-text class="text-none teal--text text--accent-1 pr-1"> 01. </v-text>
-        About
-      </v-btn>
-      <v-btn href="#experience" text class="pl-3 pr-3 text-none">
-        <v-text class="text-none teal--text text--accent-1 pr-1"> 02. </v-text>
-        Experience
-      </v-btn>
-      <v-btn href="#projects" text class="pl-3 pr-3 text-none">
-        <v-text class="text-none teal--text text--accent-1 pr-1"> 03. </v-text>
-        Projects
-      </v-btn>
-      <v-btn href="#contact" text class="pl-3 pr-3 text-none">
-        <v-text class="text-none teal--text text--accent-1 pr-1"> 04. </v-text>
-        Contact
-      </v-btn>
-      <v-btn color="teal accent-1" outlined class="pl-3 pr-3 text-none">
-        Resume
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          transition="scale-transition"
+          width="40"
+        />
+
+        <v-img
+          alt="Vuetify Name"
+          class="shrink mt-1 hidden-sm-and-down"
+          contain
+          min-width="100"
+          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          width="100"
+        />
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Latest Release</span>
+        <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
 
-    <login />
+    <v-main>
+      <HelloWorld/>
+    </v-main>
   </v-app>
 </template>
 
 <script>
-import Login from '@/components/Login.vue'
+import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
+
   components: {
-    Login
-  }
-}
+    HelloWorld,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style>
-
-.login-time {
-  color: black !important;
-  background: black;
-  background-color: black !important;
-  height: 200px;
-  width: 400px;
-  position: relative;
-}
-
-</style>
